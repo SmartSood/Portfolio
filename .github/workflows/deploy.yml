@@ -62,6 +62,9 @@ jobs:
           
           cd Portfolio
           
+          # Configure git to handle divergent branches
+          git config pull.rebase false
+          
           # Check which branch exists and pull from it
           if git ls-remote --heads origin main | grep -q main; then
             git pull origin main
@@ -74,5 +77,7 @@ jobs:
           
           npm ci
           npm run build
-          pm2 restart portfolio
+          pm2 stop portfolio
+          pm2 delete portfolio
+          pm2 start npm --name "portfolio" -- start
           echo "Deployment completed successfully!" 
