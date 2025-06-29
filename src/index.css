@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global cursor hiding - most important rule */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+/* Force hide cursor on html and body */
+html, body {
+  cursor: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 20%, #e0f2fe 40%, #e9d5ff 60%, #ddd6fe 80%, #f0f9ff 100%);
+}
+
+.dark body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 20%, #1e40af 40%, #312e81 60%, #1e1b4b 80%, #0c4a6e 100%);
+}
+
+/* Comprehensive cursor hiding for all elements */
+*, *::before, *::after,
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+button, input, textarea, select, option,
+[role="button"], [tabindex] {
+  cursor: none !important;
+}
+
+/* Force hide cursor on all interactive states */
+a:hover, a:focus, a:active, a:visited,
+button:hover, button:focus, button:active,
+input:hover, input:focus, input:active,
+textarea:hover, textarea:focus, textarea:active,
+select:hover, select:focus, select:active,
+[role="button"]:hover, [role="button"]:focus, [role="button"]:active,
+[tabindex]:hover, [tabindex]:focus, [tabindex]:active {
+  cursor: none !important;
+}
+
+/* Hide cursor on form elements specifically */
+input[type="text"], input[type="email"], input[type="number"], 
+input[type="password"], input[type="search"], input[type="tel"],
+input[type="url"], input[type="date"], input[type="time"],
+input[type="datetime-local"], input[type="month"], input[type="week"],
+input[type="color"], input[type="file"], input[type="range"],
+input[type="checkbox"], input[type="radio"], input[type="submit"],
+input[type="reset"], input[type="button"], input[type="image"],
+textarea, select, option, optgroup {
+  cursor: none !important;
+}
+
+/* Hide cursor on SVG and canvas elements */
+svg, canvas, img, video, audio {
+  cursor: none !important;
+}
+
+/* Hide cursor on scrollable elements */
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+  cursor: none !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 20%, #8b5cf6 40%, #c084fc 60%, #ec4899 80%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 20%, #c084fc 40%, #d8b4fe 60%, #f472b6 80%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.15);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.25);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(96, 165, 250, 0.25);
+}
+
+.mesh-gradient {
+  background: linear-gradient(-45deg, #2563eb, #3b82f6, #8b5cf6, #06b6d4);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.blue-glow {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+.dark .blue-glow {
+  box-shadow: 0 0 30px rgba(96, 165, 250, 0.6);
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+.typing-animation::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #2563eb;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Custom scrollbar with enhanced blue theme */
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: none !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 5px;
+  cursor: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2563eb, #3b82f6, #8b5cf6);
+  border-radius: 5px;
+  cursor: none !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb, #7c3aed);
+  cursor: none !important;
+}
+
+/* Enhanced hover effects with blue theme */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 20px 40px rgba(96, 165, 250, 0.4);
+}
+
+/* Enhanced button styles with blue theme */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6, #8b5cf6);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Enhanced card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.25);
+}
+
+.dark .card-hover:hover {
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 25px 50px rgba(96, 165, 250, 0.3);
+}
+
+/* Enhanced text selection with blue theme */
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
+}
+
+/* Additional cursor hiding for dynamic content */
+[data-cursor], [data-hover], .cursor-pointer, .pointer-events-auto {
+  cursor: none !important;
+}
+
+/* Hide cursor on focus and active states */
+:focus, :active, :focus-visible, :focus-within {
+  cursor: none !important;
+}
+
+/* Ensure cursor is hidden during animations and transitions */
+.animate-pulse, .animate-bounce, .animate-spin, .animate-ping {
+  cursor: none !important;
+}
+
+/* Hide cursor on Framer Motion elements */
+[data-framer-component], [data-framer-name] {
+  cursor: none !important;
+}
