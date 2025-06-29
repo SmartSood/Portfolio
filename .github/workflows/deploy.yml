@@ -47,8 +47,31 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22
         script: |
+          # Check if Node.js is installed
+          if ! command -v node &> /dev/null; then
+            echo "Node.js not found. Installing Node.js..."
+            curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+          fi
+          
+          # Check if PM2 is installed
+          if ! command -v pm2 &> /dev/null; then
+            echo "PM2 not found. Installing PM2..."
+            sudo npm install -g pm2
+          fi
+          
           cd Portfolio
-          git pull origin main
+          
+          # Check which branch exists and pull from it
+          if git ls-remote --heads origin main | grep -q main; then
+            git pull origin main
+          elif git ls-remote --heads origin master | grep -q master; then
+            git pull origin master
+          else
+            echo "Error: Neither main nor master branch found"
+            exit 1
+          fi
+          
           npm ci
           npm run build
           pm2 restart portfolio
