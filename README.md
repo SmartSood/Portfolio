@@ -89,6 +89,44 @@ Replace the placeholder images with your own:
 2. Set build command to `npm run build`
 3. Set output directory to `dist`
 
+### GitHub Actions + EC2 (Automated Deployment)
+
+This project includes an automated deployment workflow using GitHub Actions. When you push to the main branch, it will:
+
+1. **Build the project** - Runs linting and builds the project
+2. **Test the build** - If build fails, the deployment is rejected
+3. **Deploy to EC2** - If build succeeds, automatically deploys to your EC2 instance
+
+#### Setup Instructions:
+
+1. **Add GitHub Secrets** (in your GitHub repository settings):
+   - `EC2_HOST`: Your EC2 instance public IP or domain
+   - `EC2_USERNAME`: SSH username (usually `ubuntu` or `ec2-user`)
+   - `EC2_SSH_KEY`: Your private SSH key for EC2 access
+   - `EC2_PORT`: SSH port (usually `22`)
+
+2. **EC2 Setup Requirements**:
+   - Node.js and npm installed
+   - PM2 installed globally: `npm install -g pm2`
+   - Your portfolio repository cloned to `/home/username/Portfolio`
+   - PM2 process named "portfolio" configured
+
+3. **PM2 Configuration** (on your EC2 instance):
+   ```bash
+   cd Portfolio
+   pm2 start npm --name "portfolio" -- start
+   pm2 save
+   pm2 startup
+   ```
+
+4. **Workflow Behavior**:
+   - **On Push to main/master**: Triggers build and deployment
+   - **On Pull Request**: Only runs build (no deployment)
+   - **Build Failure**: Stops deployment and shows error
+   - **Build Success**: Automatically deploys to EC2
+
+The workflow file is located at `.github/workflows/deploy.yml`
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
