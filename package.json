@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SmartSood/Portfolio.git"
+  },
+  "homepage": "https://github.com/SmartSood/Portfolio",
+  "author": "Smarth Sood",
+  "description": "Interactive portfolio website showcasing my projects and skills",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
