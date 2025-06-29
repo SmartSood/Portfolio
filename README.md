@@ -1,6 +1,6 @@
-# Interactive Developer Portfolio
+# Smarth Sood - Interactive Developer Portfolio
 
-A modern, highly interactive developer portfolio built with React, TypeScript, and Framer Motion. Features smooth animations, dark/light mode, and a responsive design.
+A modern, highly interactive developer portfolio built with React, TypeScript, and Framer Motion. Features smooth animations, dark/light mode, and a responsive design showcasing Smarth Sood's projects and skills.
 
 ## 🚀 Features
 
@@ -18,14 +18,14 @@ A modern, highly interactive developer portfolio built with React, TypeScript, a
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Build Tool**: Vite
-- **Deployment**: Ready for Netlify, Vercel, or any static hosting
+- **Deployment**: Automated deployment with GitHub Actions + EC2
 
 ## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd interactive-portfolio
+git clone https://github.com/SmartSood/Portfolio.git
+cd Portfolio
 ```
 
 2. Install dependencies:
@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 ## 🏗️ Build
 
@@ -80,20 +80,11 @@ Replace the placeholder images with your own:
 
 ## 🚀 Deployment
 
-### Netlify
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder to Netlify
-
-### Vercel
-1. Connect your repository to Vercel
-2. Set build command to `npm run build`
-3. Set output directory to `dist`
-
 ### GitHub Actions + EC2 (Automated Deployment)
 
-This project includes an automated deployment workflow using GitHub Actions. When you push to the main branch, it will:
+This project includes an automated deployment workflow using GitHub Actions. When you push to the master branch, it will:
 
-1. **Build the project** - Runs linting and builds the project
+1. **Build the project** - Runs build process
 2. **Test the build** - If build fails, the deployment is rejected
 3. **Deploy to EC2** - If build succeeds, automatically deploys to your EC2 instance
 
@@ -101,14 +92,13 @@ This project includes an automated deployment workflow using GitHub Actions. Whe
 
 1. **Add GitHub Secrets** (in your GitHub repository settings):
    - `EC2_HOST`: Your EC2 instance public IP or domain
-   - `EC2_USERNAME`: SSH username (usually `ubuntu` or `ec2-user`)
+   - `EC2_USERNAME`: SSH username (usually `ubuntu`)
    - `EC2_SSH_KEY`: Your private SSH key for EC2 access
-   - `EC2_PORT`: SSH port (usually `22`)
 
 2. **EC2 Setup Requirements**:
    - Node.js and npm installed
    - PM2 installed globally: `npm install -g pm2`
-   - Your portfolio repository cloned to `/home/username/Portfolio`
+   - Your portfolio repository cloned to `/home/ubuntu/Portfolio`
    - PM2 process named "portfolio" configured
 
 3. **PM2 Configuration** (on your EC2 instance):
@@ -120,7 +110,7 @@ This project includes an automated deployment workflow using GitHub Actions. Whe
    ```
 
 4. **Workflow Behavior**:
-   - **On Push to main/master**: Triggers build and deployment
+   - **On Push to master**: Triggers build and deployment
    - **On Pull Request**: Only runs build (no deployment)
    - **Build Failure**: Stops deployment and shows error
    - **Build Success**: Automatically deploys to EC2
@@ -133,10 +123,15 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/SmartSood/Portfolio/issues).
 
 ## 📞 Contact
 
-Alex Johnson - [alex@example.com](mailto:alex@example.com)
+**Smarth Sood**
 
-Project Link: [https://github.com/yourusername/interactive-portfolio](https://github.com/yourusername/interactive-portfolio)
+- GitHub: [@SmartSood](https://github.com/SmartSood)
+- Portfolio: [https://github.com/SmartSood/Portfolio](https://github.com/SmartSood/Portfolio)
+
+---
+
+*Built with React, TypeScript, and Framer Motion*

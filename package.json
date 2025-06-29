@@ -1,7 +1,7 @@
 {
-  "name": "interactive-portfolio",
+  "name": "smarth-sood-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "repository": {
     "type": "git",
@@ -9,7 +9,8 @@
   },
   "homepage": "https://github.com/SmartSood/Portfolio",
   "author": "Smarth Sood",
-  "description": "Interactive portfolio website showcasing my projects and skills",
+  "description": "Interactive portfolio website showcasing Smarth Sood's projects and skills",
+  "keywords": ["portfolio", "react", "typescript", "developer", "smarth-sood"],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
