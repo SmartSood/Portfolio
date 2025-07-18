@@ -24,6 +24,22 @@ const Experience = () => {
         'Increased application performance by 40% through optimization'
       ],
       technologies: ['Python', 'Tkinter', 'Streamlit', 'AWS', 'Web Scraping', 'Figma', 'PostgreSQL'],
+    },
+    {
+      id: 2,
+      title: 'Research Assistant - Computational NeuroScience',
+      company: 'Exploratory Project under Prof. Dr. JAC Fredo AR',
+      location: 'IIT BHU Varanasi',
+      period: 'October 2023 - April 2024',
+      description: 'Conducted advanced research in Computational NeuroScience focusing on Autism Spectrum Disorder (ASD) classification using functional MRI data analysis and machine learning techniques.',
+      achievements: [
+        'Published research paper "Diagnostic Classification of ASD Improves with Dynamic Functional Connectivity (FC) of fMRI Compared to Static FC" in ISBS-RMBS 2024',
+        'Conducted fMRI analysis on 112 subjects, distinguishing subjects with ASD from TD using sFC and dFC techniques',
+        'Applied advanced machine learning methods including MLP, XGBoost and Logistic Regression',
+        'Achieved 88.76% accuracy on static FC and remarkable 96.65% accuracy on dynamic FC',
+        'Demonstrated significant improvement in ASD diagnostic classification through dynamic connectivity analysis'
+      ],
+      technologies: ['Python', 'fMRI Analysis', 'Machine Learning', 'MLP', 'XGBoost', 'Logistic Regression', 'Computational NeuroScience', 'Data Analysis'],
     }
   ];
 
