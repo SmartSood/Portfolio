@@ -29,12 +29,24 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
     
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Message sent successfully!');
+    const mailtoLink = `mailto:smarthsood@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset form after a brief delay
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, 1000);
   };
 
   const contactInfo = [
@@ -59,8 +71,8 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/smarthsood', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/smarthsood/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/Smartsood', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/smarth-sood-7a4885280/', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://x.com/smarthsood', label: 'Twitter' },
   ];
 

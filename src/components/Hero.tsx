@@ -10,6 +10,17 @@ const Hero = () => {
 
   const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver', 'Tech Enthusiast'];
 
+  const handleDownloadResume = () => {
+    const resumeUrl = '/22024018_Smarth _Sood_SDE.pdf';
+    const fileName = 'Smarth_Sood_Resume.pdf';
+    
+    // Create a temporary anchor element for download
+    const anchor = document.createElement('a');
+    anchor.href = resumeUrl;
+    anchor.download = fileName;
+    anchor.click();
+  };
+
   useEffect(() => {
     const handleType = () => {
       const i = loopNum % roles.length;
@@ -139,6 +150,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary px-8 py-4 rounded-full font-semibold text-lg shadow-purple-lg flex items-center gap-2"
+            onClick={handleDownloadResume}
           >
             <Download size={20} />
             Download Resume
@@ -159,9 +171,9 @@ const Hero = () => {
           className="flex items-center justify-center gap-6"
         >
           {[
-            { icon: Github, href: '#', label: 'GitHub', color: 'hover:text-gray-900 dark:hover:text-white' },
-            { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-600' },
-            { icon: Mail, href: '#contact', label: 'Email', color: 'hover:text-primary-500' },
+            { icon: Github, href: 'https://github.com/SmartSood', label: 'GitHub', color: 'hover:text-gray-900 dark:hover:text-white' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/smarth-sood-7a4885280/', label: 'LinkedIn', color: 'hover:text-blue-600' },
+            { icon: Mail, href: 'mailto:smarthsood@gmail.com', label: 'Email', color: 'hover:text-primary-500' },
           ].map(({ icon: Icon, href, label, color }) => (
             <motion.a
               key={label}
