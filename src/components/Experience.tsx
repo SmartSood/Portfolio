@@ -14,15 +14,17 @@ const Experience = () => {
       title: 'Python Developer',
       company: 'Gokul Infocare Pvt Ltd (Australia)',
       location: 'Remote',
-      period: 'march-june 2024',
-      description: 'Developed and maintained scalable web applications using Python, Django, and AWS. Mentored junior developers and implemented best practices for code quality and performance.',
+      period: 'March - June 2024',
+      description: 'Developed and maintained scalable web applications using Python, and AWS. Created interactive frontends and backends using Tkinter, Streamlit and Figma designs for company\'s operations.',
       achievements: [
-        'Increased application performance by 40% through optimization',
-        'Led a team of 5 developers on multiple projects', 
+        'Built an Image-to-MCQ Pipeline that automates document digitization and assessment creation',
+        'Designed and implemented a Hospital Appointment System for efficient scheduling and management',
+        'Developed optimized web scraping scripts to collect data from multiple external websites for internal analysis',
+        'Created interactive frontends and backends using Tkinter, Streamlit and Figma designs for company operations',
+        'Increased application performance by 40% through optimization'
       ],
-      technologies: ['React', 'Node.js', 'AWS', 'TypeScript', 'PostgreSQL'],
+      technologies: ['Python', 'Tkinter', 'Streamlit', 'AWS', 'Web Scraping', 'Figma', 'PostgreSQL'],
     }
-    
   ];
 
   const containerVariants = {

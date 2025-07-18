@@ -56,6 +56,17 @@ const Projects = () => {
       featured: true,
       gradient: 'from-orange-500 to-red-500', 
     },
+    {
+      id: 5,
+      title: 'Blog_Agent',
+      description: 'A blogging platform that allows users to create, edit, and publish blog posts with a focus on simplicity and ease of use. Features include rich text editing, image uploads, and a clean, responsive design.',
+      image: '/blog_agent.png',
+      technologies: ['Pyhthon','Streamlit', 'OpenAI API','Caching'],
+      github: 'https://github.com/SmartSood/Blog-Writing-Agent',
+      live:'https://ai-blog-wri.streamlit.app/',
+      featured: true,
+      gradient: 'from-yellow-500 to-red-500',
+    }
   ];
 
   const nextProject = () => {
