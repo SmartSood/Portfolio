@@ -11,7 +11,7 @@ const Hero = () => {
   const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver', 'Tech Enthusiast'];
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/22024018_Smarth _Sood_SDE.pdf';
+    const resumeUrl = '/Smarth_Sood_Resume.pdf';
     const fileName = 'Smarth_Sood_Resume.pdf';
     
     // Create a temporary anchor element for download
