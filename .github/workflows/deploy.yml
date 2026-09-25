@@ -39,13 +39,25 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     
     steps:
+    - name: Check SSH connectivity
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_PORT: ${{ secrets.EC2_PORT || 22 }}
+      run: |
+        if ! timeout 15 bash -c "</dev/tcp/${EC2_HOST}/${EC2_PORT}"; then
+          echo "Unable to reach ${EC2_HOST}:${EC2_PORT}. Check EC2_HOST, EC2_PORT, the instance state, and the EC2 security group's inbound SSH rule."
+          exit 1
+        fi
+
     - name: Deploy to EC2
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
-        port: 22
+        port: ${{ secrets.EC2_PORT || 22 }}
+        timeout: 60s
+        command_timeout: 10m
         script: |
           # Check if Node.js is installed
           if ! command -v node &> /dev/null; then

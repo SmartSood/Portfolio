@@ -92,8 +92,11 @@ This project includes an automated deployment workflow using GitHub Actions. Whe
 
 1. **Add GitHub Secrets** (in your GitHub repository settings):
    - `EC2_HOST`: Your EC2 instance public IP or domain
+   - `EC2_PORT`: Optional SSH port; defaults to `22`
    - `EC2_USERNAME`: SSH username (usually `ubuntu`)
    - `EC2_SSH_KEY`: Your private SSH key for EC2 access
+
+   The EC2 instance must be running and its security group's inbound rules must allow TCP access to `EC2_PORT` from GitHub Actions runners. A `dial tcp ...:22: i/o timeout` error occurs before the deployment script starts and indicates that the configured host or port is unreachable.
 
 2. **EC2 Setup Requirements**:
    - Node.js and npm installed
