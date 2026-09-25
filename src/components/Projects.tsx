@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import AccordionGallery from './AccordionGallery';
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -14,10 +15,10 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Draw App',
-      description: 'A collaborative drawing application similar to Exalidraw but with enhanced collaborative writing features. Users can create, edit, and collaborate on drawings and documents in real-time with multiple participants.',
+      title: 'Exalidraw - Real-Time Collaborative Drawing Platform',
+      description: 'A full-stack drawing platform with infinite canvas, zoom and pan, live multi-user synchronization, export tools, and secured API and WebSocket endpoints.',
       image: '/draw_app.png',
-      technologies: ['Next.js', 'Canvas', 'WebSockets', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Prisma','TypeScript','Turborepo'],
+      technologies: ['Next.js', 'TypeScript', 'WebSocket', 'PostgreSQL', 'Prisma', 'Tailwind', 'Turborepo', 'pnpm', 'Zod', 'AWS', 'Docker'],
       github: 'https://github.com/smartsood/draw_app',
       live: 'https://draw.smarthsood.com',
       featured: true,
@@ -25,10 +26,10 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Invest IQ',
-      description: 'A comprehensive financial education and portfolio assistance application that helps users learn about investing, track their portfolios, and make informed financial decisions with educational content and real-time market data.',
+      title: 'Invest IQ Financial Assistance App',
+      description: 'A financial assistance platform with gamified modules, progress tracking, reward-based quizzes, OAuth, voice and text modules, multilingual news, and AI-powered portfolio analysis.',
       image: '/invest_iq.png',
-      technologies: ['React', 'JavaScript', 'Chart.js', 'Financial APIs', 'O Auth', 'Tailwind CSS','MongoDB','Google Cloud API'],
+      technologies: ['MERN', 'Tailwind CSS', 'Python', 'Google Cloud', 'Hugging Face', 'Gradio', 'Groq', 'RAG'],
       github: 'https://github.com/SmartSood/Invest-IQ-Finance-Demo',
       live: 'https://invest-iq.smarthsood.com',
       featured: true, 
@@ -36,12 +37,12 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Anonymous Chat App',
-      description: 'A secure anonymous chat application where users can engage in conversations without revealing their identity. Features include private rooms, message encryption, and real-time messaging with complete privacy protection.',
+      title: 'Java Desktop Tools Suite',
+      description: 'A Java desktop suite combining a smart text editor with spellcheck, autocorrect, autocomplete, and Flesch Index analysis, plus an earthquake monitoring visualizer with map and proximity tools.',
       image: '/chat_app.png',
-      technologies: ['Next.js', 'WebSockets', 'End-to-End Encryption', 'PostgreSQL','Tailwind CSS','TypeScript'],
-      github: 'https://github.com/smartsood/chat_app',
-      live: 'https://chat.smarthsood.com',
+      technologies: ['Java', 'Swing', 'OOP', 'GeoJSON', 'DSA', 'Data Visualization'],
+      github: '#',
+      live: '#',
       featured: true,
       gradient: 'from-purple-500 to-pink-500',
     },
@@ -124,6 +125,22 @@ const Projects = () => {
           >
             Here are some of my recent projects that showcase my skills and passion for development
           </motion.p>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="mb-16"
+        >
+          <AccordionGallery
+            items={projects.map((project) => ({
+              image: project.image,
+              label: project.title,
+              link: project.github === '#' ? undefined : project.github,
+              alt: `${project.title} project preview`,
+            }))}
+          />
         </motion.div>
 
         {/* Featured Project Carousel */}

@@ -84,8 +84,8 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: Award, number: '2+', label: 'Years Experience', gradient: 'from-blue-500 to-purple-500' },
-    { icon: Users, number: '20+', label: 'Projects ', gradient: 'from-purple-500 to-pink-500' },
+    { icon: Award, number: '8.80', label: 'Current CGPA', gradient: 'from-blue-500 to-cyan-500' },
+    { icon: Users, number: '5+', label: 'Featured Projects', gradient: 'from-emerald-500 to-teal-500' },
     { icon: Coffee, number: '1000+', label: 'Cups of Coffee', gradient: 'from-cyan-500 to-blue-500' },
     { icon: Lightbulb, number: '∞', label: 'Ideas Generated', gradient: 'from-pink-500 to-purple-500' },
   ];
@@ -117,9 +117,10 @@ const About = () => {
             variants={rightSlideVariants}
             className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            I'm a passionate full-stack developer with over 1 year of experience creating
-            digital solutions that make a difference. I love turning complex problems into
-            simple, beautiful, and intuitive designs. My favorite work lies at the intersection of designing and building stong backend frameworks, creating experiences that not only look great but are meticulously built for performance and usability.
+            I'm an Integrated Dual Degree Biomedical Engineering student at IIT (BHU), Varanasi,
+            graduating in 2027 with an 8.80 CGPA. I build full-stack products, developer tools,
+            and data-driven experiences across React, Next.js, Python, cloud infrastructure, and
+            machine learning.
           </motion.p>
         </motion.div>
 
